@@ -14,9 +14,9 @@ function startTime() {
     return i;
   }
 
-  function setAlarm()
+  //function setAlarm();
 
-  function alarmTrigger()
+  //function alarmTrigger();
 
   //listener for time?
   //when time = this time alarmTrigger
