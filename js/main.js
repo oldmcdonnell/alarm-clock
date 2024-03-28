@@ -25,7 +25,7 @@ function timeChangeFunction(){
     time.textContent = '${hrs}:${min}:${sec} ${period}';
 }
 
-function alarmSetFunction() [
+function alarmSetFunction() {
     let now = new Date();
     let selectedDate = new Date(dateInput.value + "T" + tInput.value);
     if (selectedDate <= now){
@@ -40,20 +40,20 @@ if (almTimesArray.includes(selectedDate.toString())){
 
 if (cnt < maxValue) {
     let timeUntilAlarm = selectedDate - now;
-    let alarmDiv = document.createElement('div');
-    alarmDiv.classList.add('add');
-    alarmDiv.innerHTML = '
+    let alarmDiv = document.createElement("div");
+    alarmDiv.classList.add("alarm");
+    alarmDiv.innerHTML = `
         <span>
-           $(selectedDate.tolocaleString())}
+          ${selectedDate.toLocaleString()}
         </span>
-        <button class= 'delete-alarm'>
-        Delete
+        <button class="delete-alarm">
+          Delete
         </button>
-        ';
+    `;
         alarmDiv
             .querySelector("delete-alarm")
-            .addEventListener("click", () = >{
-            alarmDiv.remove();
+            .addEventListener("click", () => {
+                alarmDiv.remove();
                 cnt--;
                 clearTimeout(interVal);
                 const idx = almTimesArray.indexOf(selectedDate.toString());
@@ -61,8 +61,8 @@ if (cnt < maxValue) {
                     almTimesArray.splice(idx, 1);
                 }
             });
-        interVal setTimeout(() => {
-            alert("Time to wake up!");
+        interVal = setTimeout(() => {
+            alert("Wake the fuck up!");
             alarmDiv.remove();
             cnt--;
             const alarmIndex = almTimesArray.indexOf(selectedDate.toString());
@@ -83,7 +83,7 @@ function showAlarmFunction() {
     alarms.forEach((alarm) => {
         let deleteButton = alarm.querySelector(".delete-alarm");
         deleteButton.addEventListener("click", () => {
-            alarmDiv.remove()
+            alarmDiv.remove();
             cnt--;
             clearTimeout(interVal);
             const alarmIndex = almTimesArray.indexOf(selectedDate.toString());
