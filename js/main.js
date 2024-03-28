@@ -1,4 +1,4 @@
-const displayedClock = document.querySelector('.displayed-clock');
+//const displayedClock = document.querySelector('.displayed-clock');
 
 function startTime() {
     const today = new Date();
@@ -9,7 +9,6 @@ function startTime() {
     s = checkTime(s);
     document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
     setTimeout(startTime, 1000);
-    document.querySelector('.displayed-clock');
   }
   
   function checkTime(i) {
